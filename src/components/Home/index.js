@@ -189,8 +189,3 @@ function Home() {
         data = {commitData}
         chartLabel = {"Commit Statistics"}
       />
-    </div>
-  )
-}
-
-export default Home;
