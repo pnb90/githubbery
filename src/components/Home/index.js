@@ -24,8 +24,6 @@ function Home() {
   const [paginationData, setPaginationData] = useState()
   const [superTotal, setSuperTotal] = useState([])
 
-
-
   // const jsLibraries = [
   //   {owner: "facebook",
   //   repo: "react"
