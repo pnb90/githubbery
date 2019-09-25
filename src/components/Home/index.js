@@ -51,46 +51,46 @@ function Home() {
     var githubHeader = "application/vnd.github.v3+json"
     
   // useEffect(() => {
-    // axios
-    //   .all(
-    //     [
-    //     axios.get( github + "facebook/react", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "angular/angular.js", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "emberjs/ember.js", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "vuejs/vue", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "vuejs/vue/contributors?page=1&per_page=100", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "angular/angular.js/contributors?page=1&per_page=100", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "facebook/react/contributors?page=1", {
-    //       headers: { Accept: githubHeader }}),
-    //     axios.get( github + "emberjs/ember.js/contributors?page=1&per_page=100", {
-    //       headers: { Accept: githubHeader }}),
-    //   ])
-    //   .then(axios.spread((reactStats, angularStats, emberStats, vueStats, vueCommits, angularCommits, reactCommits, emberCommits) => {
-    //     setReactStargazers(reactStats.data.stargazers_count)
-    //     setAngularStargazers(angularStats.data.stargazers_count)
-    //     setEmberStargazers(emberStats.data.stargazers_count)
-    //     setVueStargazers(vueStats.data.stargazers_count)
-    //     setReactWatchers(reactStats.data.watchers_count)
-    //     setAngularWatchers(angularStats.data.watchers_count)
-    //     setEmberWatchers(emberStats.data.watchers_count)
-    //     setVueWatchers(vueStats.data.watchers_count)
-    //     setReactForks(reactStats.data.forks_count)
-    //     setAngularForks(angularStats.data.forks_count)
-    //     setEmberForks(emberStats.data.forks_count)
-    //     setVueForks(vueStats.data.forks_count)
-    //     setVueTotalCommits(vueCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-    //     setAngularTotalCommits(angularCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-    //     setReactTotalCommits(reactCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-    //     setEmberTotalCommits(emberCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+  //   axios
+  //     .all(
+  //       [
+  //       axios.get( github + "facebook/react", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "angular/angular.js", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "emberjs/ember.js", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "vuejs/vue", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "vuejs/vue/contributors?page=1&per_page=100", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "angular/angular.js/contributors?page=1&per_page=100", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "facebook/react/contributors?page=1", {
+  //         headers: { Accept: githubHeader }}),
+  //       axios.get( github + "emberjs/ember.js/contributors?page=1&per_page=100", {
+  //         headers: { Accept: githubHeader }}),
+  //     ])
+  //     .then(axios.spread((reactStats, angularStats, emberStats, vueStats, vueCommits, angularCommits, reactCommits, emberCommits) => {
+  //       setReactStargazers(reactStats.data.stargazers_count)
+  //       setAngularStargazers(angularStats.data.stargazers_count)
+  //       setEmberStargazers(emberStats.data.stargazers_count)
+  //       setVueStargazers(vueStats.data.stargazers_count)
+  //       setReactWatchers(reactStats.data.watchers_count)
+  //       setAngularWatchers(angularStats.data.watchers_count)
+  //       setEmberWatchers(emberStats.data.watchers_count)
+  //       setVueWatchers(vueStats.data.watchers_count)
+  //       setReactForks(reactStats.data.forks_count)
+  //       setAngularForks(angularStats.data.forks_count)
+  //       setEmberForks(emberStats.data.forks_count)
+  //       setVueForks(vueStats.data.forks_count)
+  //       setVueTotalCommits(vueCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+  //       setAngularTotalCommits(angularCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+  //       setReactTotalCommits(reactCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+  //       setEmberTotalCommits(emberCommits.data.reduce((sum, object) => sum + object.contributions, 0))
 
-    //   })
-    // )}, [])    
+  //     })
+  //   )}, [])    
 
     const watcherData = {
       labels: ["Angular", "Ember", "React", "Vue"],
