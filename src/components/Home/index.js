@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BarChart from '../BarChart'
 import TableComponent from '../TableComponent'
-
+import VotingSystem from '../VotingSystem'
+import TotalVotesChart from '../TotalVotesChart'
+import SideBar from '../SideBar'
 
 function Home() {
   const [reactStargazers, setReactStargazers] = useState();
@@ -22,8 +24,13 @@ function Home() {
   const [emberForks, setEmberForks] = useState(0)
   const [vueForks, setVueForks] = useState(0)
   const [paginationData, setPaginationData] = useState()
-  const [superTotal, setSuperTotal] = useState([])
-
+  
+  const backgroundColors = [
+      '#E23337',
+      '#E04E39',
+      '#61DAFB',
+      '#41B883'
+      ]
   // const jsLibraries = [
   //   {owner: "facebook",
   //   repo: "react"
@@ -39,54 +46,51 @@ function Home() {
   //   },
   // ]
   
-  var github = "https://api.github.com/repos/"
-  var githubHeader = "application/vnd.github.v3+json"
 
-  useEffect(() => {
+    var github = "https://api.github.com/repos/"
+    var githubHeader = "application/vnd.github.v3+json"
+    
+  // useEffect(() => {
+    // axios
+    //   .all(
+    //     [
+    //     axios.get( github + "facebook/react", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "angular/angular.js", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "emberjs/ember.js", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "vuejs/vue", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "vuejs/vue/contributors?page=1&per_page=100", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "angular/angular.js/contributors?page=1&per_page=100", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "facebook/react/contributors?page=1", {
+    //       headers: { Accept: githubHeader }}),
+    //     axios.get( github + "emberjs/ember.js/contributors?page=1&per_page=100", {
+    //       headers: { Accept: githubHeader }}),
+    //   ])
+    //   .then(axios.spread((reactStats, angularStats, emberStats, vueStats, vueCommits, angularCommits, reactCommits, emberCommits) => {
+    //     setReactStargazers(reactStats.data.stargazers_count)
+    //     setAngularStargazers(angularStats.data.stargazers_count)
+    //     setEmberStargazers(emberStats.data.stargazers_count)
+    //     setVueStargazers(vueStats.data.stargazers_count)
+    //     setReactWatchers(reactStats.data.watchers_count)
+    //     setAngularWatchers(angularStats.data.watchers_count)
+    //     setEmberWatchers(emberStats.data.watchers_count)
+    //     setVueWatchers(vueStats.data.watchers_count)
+    //     setReactForks(reactStats.data.forks_count)
+    //     setAngularForks(angularStats.data.forks_count)
+    //     setEmberForks(emberStats.data.forks_count)
+    //     setVueForks(vueStats.data.forks_count)
+    //     setVueTotalCommits(vueCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+    //     setAngularTotalCommits(angularCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+    //     setReactTotalCommits(reactCommits.data.reduce((sum, object) => sum + object.contributions, 0))
+    //     setEmberTotalCommits(emberCommits.data.reduce((sum, object) => sum + object.contributions, 0))
 
-  })
-
-  useEffect(() => {
-    axios
-      .all(
-        [
-        axios.get( github + "facebook/react", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "angular/angular.js", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "emberjs/ember.js", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "vuejs/vue", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "vuejs/vue/contributors?page=1&per_page=100", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "angular/angular.js/contributors?page=1&per_page=100", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "facebook/react/contributors?page=1", {
-          headers: { Accept: githubHeader }}),
-        axios.get( github + "emberjs/ember.js/contributors?page=1&per_page=100", {
-          headers: { Accept: githubHeader }}),
-      ])
-      .then(axios.spread((reactStats, angularStats, emberStats, vueStats, vueCommits, angularCommits, reactCommits, emberCommits) => {
-        setReactStargazers(reactStats.data.stargazers_count)
-        setAngularStargazers(angularStats.data.stargazers_count)
-        setEmberStargazers(emberStats.data.stargazers_count)
-        setVueStargazers(vueStats.data.stargazers_count)
-        setReactWatchers(reactStats.data.watchers_count)
-        setAngularWatchers(angularStats.data.watchers_count)
-        setEmberWatchers(emberStats.data.watchers_count)
-        setVueWatchers(vueStats.data.watchers_count)
-        setReactForks(reactStats.data.forks_count)
-        setAngularForks(angularStats.data.forks_count)
-        setEmberForks(emberStats.data.forks_count)
-        setVueForks(vueStats.data.forks_count)
-        setVueTotalCommits(vueCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-        setAngularTotalCommits(angularCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-        setReactTotalCommits(reactCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-        setEmberTotalCommits(emberCommits.data.reduce((sum, object) => sum + object.contributions, 0))
-
-      })
-    )}, [])    
+    //   })
+    // )}, [])    
 
     const watcherData = {
       labels: ["Angular", "Ember", "React", "Vue"],
@@ -133,28 +137,26 @@ function Home() {
       ]
     };
 
-    useEffect(() => {
-      axios
-      .get( github + "facebook/react/contributors")
-      .then(response => setPaginationData(response.headers.link))
-    }, [])
+    // useEffect(() => {
+    //   axios
+    //   .get( github + "facebook/react/contributors")
+    //   .then(response => setPaginationData(response.headers.link))
+    // }, [])
 
     const clickHandler = () => {
       var regexPattern = /.\d(?=>; rel="last")/
-      var finalPage = parseInt(regexPattern.exec(paginationData)[0])
-      var pageTotal = 0 
-      
-      for(let i = 1; i <= finalPage; i++ ) {
-        axios
-        .get(github + "facebook/react/contributors?page=" + i)
-        .then(response => 
-          pageTotal = response.data.reduce((sum, object) => sum + object.contributions, 0))
-        .then(console.log(pageTotal))
-      }
+      // var finalPage = parseInt(regexPattern.exec(paginationData)[0])
+      // for(let i = 1; i <= finalPage; i++ ) {
+      //   axios
+      //   .get(github + "facebook/react/contributors?page=" + i)
+      //   .then(response => console.log(response.data.reduce((sum, object) => sum + object.contributions, 0)))
+      // }
     }
+  
 
   return (
     <div>
+    <SideBar />
     <TableComponent
        reactWatchers = { reactWatchers }
        angularWatchers = { angularWatchers }
@@ -173,19 +175,30 @@ function Home() {
        emberTotalCommits = { emberTotalCommits }
        vueTotalCommits = { vueTotalCommits }
     />
-      <button onClick={clickHandler}> +++ </button>
-
+      <button onClick={clickHandler()}> +++ </button>
       <BarChart 
         data = {watcherData}
         chartLabel = {"Watcher Statistics"}
+        backgroundColors = { backgroundColors }
       />
 
       <BarChart 
         data = {forkData}
         chartLabel = {"Fork Statistics"}
+        backgroundColors = { backgroundColors }
       />
 
       <BarChart 
         data = {commitData}
         chartLabel = {"Commit Statistics"}
+        backgroundColors = { backgroundColors }
       />
+      <VotingSystem />
+      <TotalVotesChart 
+        backgroundColors = { backgroundColors }
+      />
+      </div>
+    )
+}
+
+export default Home
