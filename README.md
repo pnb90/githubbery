@@ -47,23 +47,22 @@ Users are presented with a dashboard with several graphs and tables to review.
 
   Lastly, I was having issues deciding on a database to store the unique emails and session IDs. I was leaning towards creating a quick Rails backend, but was weary of that option as it seemed a bit of an overkill as I needed it to simply store two data sets. My former classmates suggested Firebase for a quick database, and I was able to find a good tutorial, and it has been working well thus far. However, this entire process took about two days to figure out, and I am
 
-## Icebox
+<!-- ## Icebox
   - Testing
   - 
 
 While I am familiar with testing via Jest + React-Testing-Library, I
 Currently, the animation that displays the book's title, authors, and publisher, grows and then shrinks. Oftentimes, the wordwrap will also change during this grow and shrink process, which can be not the most aesthetically pleasing.
 
-I was able to attend a talk about an 8th Light employee regarding accessibility, which piqued my interest about accessibility for all users. I have not had the opportunity to ensure that my app is accessible.
+I was able to attend a talk about an 8th Light employee regarding accessibility, which piqued my interest about accessibility for all users. I have not had the opportunity to ensure that my app is accessible. -->
 
 ## Built With
 
 * [React](https://reactjs.org/) - Frontend Framework
+* [Firebase](https://firebase.google.com/) - Database by Google
 * [Material UI](https://material-ui.com/) - React Framework based on Material Design
-* [Jest](https://jestjs.io/) - Javascript Testing Framework
-* [React-Testing-Library](https://testing-library.com/) - Testing library used for React components
 * [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js used to make the Google Books API call
-* [Styled-Components](https://www.styled-components.com/) - CSS styling for the entire app.
+
 
 ## Authors
 
@@ -71,4 +70,3 @@ I was able to attend a talk about an 8th Light employee regarding accessibility,
 
 ## Acknowledgments
 
-Thank you to all the insanely helpful online resources I was able to use, including but not limited to: HackerNoon, FreeCodeCamp, V School, Leigh Halliday, Kent C. Dobbs, Ola from 8th Light who showed me React-Testing-Library, Elizabeth Funk, CSS-Tricks, and endless YouTube Tutorials.face
