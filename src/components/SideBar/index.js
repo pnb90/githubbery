@@ -10,24 +10,19 @@ function SideBar() {
 
   let angularIcon = <img src = "https://angular.io/assets/images/logos/angular/angular.svg" height="25" width="25"/>
 
-
-
-
   return(
     <div> 
-      <Drawer
-        variant = "permanent"
-      >
+      <Drawer variant = "permanent">
         <h1>Githubbery</h1>
         <List>
-          <ListItem> {angularIcon}  Angular</ListItem>
-          <ListItem> {emberIcon}  Ember</ListItem>
-          <ListItem> {reactIcon}  React</ListItem>
-          <ListItem> {vueIcon}  Vue</ListItem>
+          <ListItem><a href="/angular"> {angularIcon}  Angular</a> </ListItem>
+          <ListItem><a href="/ember"> {emberIcon}  Ember </a></ListItem>
+          <ListItem><a href="/react"> {reactIcon}  React </a></ListItem>
+          <ListItem><a href="/vue"> {vueIcon}  Vue </a></ListItem>
           <Divider />
-          <ListItem> Watchers </ListItem>
-          <ListItem> Forks </ListItem>
-          <ListItem> Commits </ListItem>
+          <ListItem><a href="/watchers"> Watchers </a> </ListItem>
+          <ListItem><a href="/forks"> Forks </a> </ListItem>
+          <ListItem><a href="/commits"> Commits </a> </ListItem>
 
         </List>
       </Drawer>
